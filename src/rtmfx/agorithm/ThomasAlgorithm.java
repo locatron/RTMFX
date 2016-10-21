@@ -21,7 +21,7 @@ public class ThomasAlgorithm {
         }
         d[n] = (d[n] - a[n] * d[n - 1]) / (b[n] - a[n] * c[n - 1]);
         for (int i = n; i-- > 0;) {
-            d[i] -= c[i] * d[i + 1];
+            d[i] -= c[i] * d[i + 1];   
         }
     }
 }
