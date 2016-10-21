@@ -1,14 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rtmfx.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="608.0" prefWidth="566.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rtmfx.FXMLDocumentController">
     <children>
-        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
+        <Button fx:id="button" layoutX="434.0" layoutY="554.0" onAction="#handleButtonAction" text="Click Me!" />
+        <MenuBar fx:id="menubar" layoutY="7.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="Datei">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Schließen" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Bearbeiten">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Löschen" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Hilfe">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleHelpAction" text="Über" />
+                    </items>
+                </Menu>
+            </menus>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+        </MenuBar>
+        <Label fx:id="label" layoutX="14.0" layoutY="567.0" prefHeight="17.0" prefWidth="142.0" text="Keine Daten geladen" />
+        <TabPane layoutX="6.0" layoutY="29.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <tabs>
+                <Tab text="Parameter">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="471.0" prefWidth="566.0">
+                            <children>
+                                <Label layoutX="99.0" layoutY="15.0" text="Faktor zur zeitlichen Diskretisierung  η" />
+                                <Label layoutX="215.0" layoutY="50.0" text="Zerfallskonstante λ" />
+                                <Label layoutX="103.0" layoutY="85.0" prefHeight="17.0" prefWidth="230.0" text="Diffusionskoeffizient von Radon in DL" />
+                                <Label layoutX="3.0" layoutY="130.0" text="Rn-Verteilungskoeffizient zwischen Olivenöl und Luft" />
+                                <Separator layoutX="24.0" layoutY="115.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="-4.0" />
+                                <Label layoutX="5.0" layoutY="165.0" text="Rn-Verteilungskoeffizient zwischen Wasser und Luft" />
+                                <Separator layoutX="5.0" layoutY="195.0" prefWidth="200.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                                <Label layoutX="241.0" layoutY="210.0" text="Zeitschritt (h)" />
+                                <Label layoutX="238.0" layoutY="245.0" text="Gesamtzeit (h)" />
+                                <Label layoutX="45.0" layoutY="281.0" text="Anzahl der anzuzeigenden letzten Zeitschritte" />
+                                <Separator layoutX="19.0" layoutY="310.0" prefWidth="200.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                                <Label layoutX="114.0" layoutY="325.0" text="Mittlere Fließgeschwindigkeit (m/s)" />
+                                <Label layoutX="180.0" layoutY="360.0" text="Empirische Konstante m" />
+                                <Label layoutX="182.0" layoutY="395.0" text="Empirische Konstante b" />
+                                <Separator layoutX="19.0" layoutY="425.0" prefWidth="200.0" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="-9.0" />
+                                <Label layoutX="53.0" layoutY="440.0" text="Temperatur im Verteilungsgleichgewicht (°C)" />
+                                <TextField layoutX="340.0" layoutY="10.0" />
+                                <TextField layoutX="340.0" layoutY="45.0" />
+                                <TextField layoutX="340.0" layoutY="80.0" />
+                        <TextField layoutX="340.0" layoutY="125.0" />
+                        <TextField layoutX="340.0" layoutY="160.0" />
+                        <TextField layoutX="340.0" layoutY="205.0" />
+                        <TextField layoutX="340.0" layoutY="240.0" />
+                        <TextField layoutX="340.0" layoutY="275.0" />
+                        <TextField layoutX="340.0" layoutY="320.0" />
+                        <TextField layoutX="340.0" layoutY="355.0" />
+                        <TextField layoutX="340.0" layoutY="390.0" />
+                        <TextField layoutX="340.0" layoutY="435.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Ausgangswerte">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                </Tab>
+                <Tab text="Ergebnis">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                </Tab>
+                <Tab text="Diagramm">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                </Tab>
+                <Tab text="Simulation">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                </Tab>
+                <Tab text="Mittelwerte">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                </Tab>
+
+            </tabs>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+        </TabPane>
     </children>
 </AnchorPane>
